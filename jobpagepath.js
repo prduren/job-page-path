@@ -28,11 +28,9 @@ console.log(document)
 
 const links = document.getElementsByTagName("a");
 
+console.log("links: ", links);
 
 links.forEach((link) => {
   console.log('link: ', link);
   if (link.innerText.match( /Jobs|career/g )) console.log(link.innerText);
 });
-
-
-console.log("links: ", links);

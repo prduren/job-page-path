@@ -6,7 +6,7 @@
   "description": "Finds the URL path for the jobs/careers page on any given website, if it exists.",
 
   "icons": {
-    "48": "icons/path-48.png"
+    "48": "icons/path-48.jpg"
   },
 
   "content_scripts": [
