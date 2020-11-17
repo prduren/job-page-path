@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "Job Page Path",
+  "version": "1.0",
+
+  "description": "Finds the URL path for the jobs/careers page on any given website, if it exists.",
+
+  "icons": {
+    "48": "icons/path-48.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["jobpagepath.js"]
+    }
+  ]
+}
