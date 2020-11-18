@@ -1,36 +1,18 @@
-
-const url = window.location.href;
-
-
-console.log("url: ", url);
-
-
-/* function urlExists(url, callback) {
-  fetch(url, { method: "head" }).then((status) => {
-    callback(status.ok);
-  });
-}
-
-urlExists(url, (exists) => {
-  if (exists) {
-    fetch(url, {
-      method: "post",
-      headers: { "Content-Type": "application/json" },
-
-    }).then((res) => res.text());
-  } else {
-    console.log("def a 404");
-  }
-}); */
-
+"use strict";
+var url = window.location.href;
 document.body.style.border = "5px solid red";
-console.log(document)
-
-const links = document.getElementsByTagName("a");
-
-console.log("links: ", links);
-
-links.forEach((link) => {
-  console.log('link: ', link);
-  if (link.innerText.match( /Jobs|career/g )) console.log(link.innerText);
-});
+var links = document.getElementsByTagName("a");
+function checker() {
+    var _a;
+    for (var i in links) {
+        var link = links[i];
+        var text = link === null || link === void 0 ? void 0 : link.innerText;
+        if ((_a = links[i]) === null || _a === void 0 ? void 0 : _a.innerText.match(/Job|jobs|careers|career/i)) {
+            console.log("found", text);
+            var element = document.createElement("a");
+            element.innerHTML = "View Jobs";
+            // element.style = "display:fixed;top:0;right:0;";
+        }
+    }
+}
+checker();
