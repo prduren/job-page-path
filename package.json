@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/prduren/job-page-path#readme",
   "dependencies": {
+    "@types/chrome": "^0.0.126",
     "axios": "^0.21.0",
     "cheerio": "^1.0.0-rc.3"
   }
