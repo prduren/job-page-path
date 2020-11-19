@@ -5,41 +5,28 @@ document.body.style.border = "5px solid red";
 const links = document.getElementsByTagName("a");
 
 function checker() {
-  const body = document.body;
-  const wrapper = document.createElement('div');
-
-  wrapper.style.backgroundColor = 'pink';
+  const body: any = document.body;
+  const wrapper: any = document.createElement('div');
+  wrapper.style.backgroundColor = "pink";
   wrapper.style.display = 'flex';
-  //  wrapper.style.position = 'fixed';
-  wrapper.style.top = '2rem';
-  wrapper.style.right = '2rem';
-  wrapper.style.zIndex = '10000000000000000';
+  // wrapper.style.position = 'fixed';
+  // wrapper.style.top = '2rem';
+  // wrapper.style.right = '2rem';
+  wrapper.style.zIndex = "100000000000";
+  wrapper.style.width = '10rem';
+  wrapper.style.height = '10rem';
+  wrapper.style.margin = '0 auto';
 
   for (const i in links) {
-
-    if (!links?.[i]?.innerText) return;
     const link = links[i];
     const text = link?.innerText;
-    if (text) {
-      if (
-        text?.match(/job|jobs|careers|career|employment|work for us|work here/i)
-      ) {
-        document.body.appendChild(link);
-        wrapper.append(links[i]);
-      }
+    if (links[i]?.innerText.match(/Job|jobs|careers|career/i)) {
+      console.log("found", text);
+      wrapper.appendChild(link);
     }
   }
-
-
   console.log(wrapper);
+  body.appendChild(wrapper);
 }
 
-chrome.runtime.sendMessage({}, (response) => {
-  var checkReady = setInterval(() => {
-    if (document.readyState === 'complete') {
-      clearInterval(checkReady);
-
-      checker();
-    }
-  });
-});
+checker();
